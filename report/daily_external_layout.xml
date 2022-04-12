@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id="report_dailyReportExternalayout"
+          string="Report Dayli"
+          model="ej.map_static"
+          report_type="qweb-pdf"
+          name="map_static.dailyReportExternalayout"/>
+        <report id="report_dailyReportExternalayout"
+        string="Report Dayli"
+        model="ej.map_static"
+        report_type="qweb-pdf"
+        name="map_static.dailyReportExternalayout"/>
+
+        <template id="dailyReportExternalayout">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+<!--                    <t t-call="web.external_layout">-->
+                        <div class="page">
+
+                            <h1>hola</h1>
+<!--                            <span t-esc="o.ejemplo_pdf()" ></span>-->
+                            <img t-att-src="o.mapa_pdf()" style="display: block; margin: 0px 20px 0px 20px;"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+    </data>
+</odoo>
+
+
+
+
+<!--<odoo>-->
+<!--    <data>-->
+<!--&lt;!&ndash;    el id es un nombre unico&ndash;&gt;-->
+<!--        <report id="report_custom"-->
+<!--          string="Report Personalizate"-->
+<!--          model="ej.map_static"-->
+<!--          report_type="qweb-pdf"-->
+<!--          name="map_static.report_custom_template"/>-->
+
+
+
+<!--        <template id="report_custom_template">-->
+
+<!--            <t t-call="web.html_container">-->
+<!--                <div class="header">-->
+<!--                    gfs-->
+<!--                </div>-->
+<!--                <div class="page">-->
+<!--                    <h1>-->
+<!--                        Mi primer modulo-->
+<!--                        <span t-esc="o.ejemplo_pdf()" ></span>-->
+<!--                    </h1>-->
+<!--                </div>-->
+
+<!--                <div class="footer">dfdsfd</div>-->
+
+<!--            </t>-->
+<!--        </template>-->
+
+<!--        <template id="report_avaluo">-->
+<!--            <t t-call="web.html_container">-->
+<!--                <t t-foreach="docs" t-as="o">-->
+<!--                    <t t-call="web.external_layout"/>-->
+<!--                </t>-->
+<!--            </t>-->
+<!--        </template>-->
+
+
+<!--    </data>-->
+<!--</odoo>-->

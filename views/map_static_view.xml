@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ej_map_static_form" model="ir.ui.view"> 
+        <field name="name">ej.map_static.form</field> 
+        <field name="model">ej.map_static</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de Map_static"> 
+                <group> 
+                    <field name="name"/> 
+                    <field name="latitud"/> 
+                    <field name="longitud"/> 
+                    <field name="size"/> 
+                    <field name="zoom"/> 
+                    <field name="map_type"/> 
+                    <field name="marker_color"/> 
+                    <field name="marker_label"/> 
+                    <field name="marker_point"/> 
+                </group> 
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_tree_map_static" model="ir.ui.view"> 
+        <field name="name">ej.map_static.tree</field> 
+        <field name="model">ej.map_static</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                    <field name="name"/> 
+                    <field name="latitud"/> 
+                    <field name="longitud"/> 
+                    <field name="size"/> 
+                    <field name="zoom"/> 
+                    <field name="map_type"/> 
+                    <field name="marker_color"/> 
+                    <field name="marker_label"/> 
+                    <field name="marker_point"/> 
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_map_static"> 
+        <field name="name">map_static</field> 
+        <field name="res_model">ej.map_static</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="view_id"  ref="view_tree_map_static" /> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="ej_map_static_menu" name="Map_static" web_icon="stock,static/description/icon.png" sequence="10"/> 
+<menuitem id="submenu_ej_map_static_menu" name="Map_static" sequence="10" parent="ej_map_static_menu"/> 
+<menuitem id="submenu_ej_map_static_action" name="Map_static" sequence="10" parent="submenu_ej_map_static_menu" action="act_ej_map_static"/> 
+</odoo> 
